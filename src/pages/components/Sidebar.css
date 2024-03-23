@@ -1,0 +1,210 @@
+.sidebar {
+    background-color: #081028;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2rem 3rem;
+    width: 15rem;
+    height: 100%;
+    transition: 0.5s all;
+}
+
+.sidebar .logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.sidebar .logoContainer .title {
+    font-size: 31.42px;
+    color: #ffffff;
+    padding: 0 0 0 1rem;
+}
+
+.sidebar .burgerContainer {
+    content: "";
+    background-color: white;
+    position: absolute;
+    right: -17.5px;
+    top: calc(9rem / 1.15);
+    width: 35px;
+    height: 35px;
+    border-radius: 2rem;
+    z-index: 1;
+}
+
+.sidebar .burgerContainer .burgerTrigger {
+    content: "";
+    width: 35px;
+    height: 35px;
+    background-color: red;
+    cursor: pointer;
+    z-index: 6;
+    opacity: 0;
+    position: relative;
+}
+
+.sidebar .burgerContainer .burgerMenu {
+    content: "";
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    width: 20px;
+    height: 3px;
+    border-radius: 2rem;
+    bottom: 17.5px;
+    left: 0.45rem;
+    transition: 0.5s all;
+}
+
+.sidebar .burgerContainer .burgerMenu::after {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    border-radius: 2rem;
+    top: 0.4rem;
+    transform: translateY(-0.4rem) rotate(45deg);
+    transition: 0.5s all;
+}
+
+.sidebar .burgerContainer .burgerMenu::before {
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: 20px;
+    height: 3px;
+    border-radius: 2rem;
+    top: -0.4rem;
+    transform: translateY(0.4rem) rotate(-45deg);
+    transition: 0.5s all;
+}
+
+.sidebar .burgerContainer::after {
+    content: "";
+    position: absolute;
+    right: 35px;
+    top: 17.5px;
+    z-index: 0;
+    width: calc(6rem + 15rem);
+    background-color: #d3d3d3;
+    height: 2px;
+    transition: 0.5s all;
+}
+
+.sidebar .profileContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3rem 0 0 0;
+}
+
+.sidebar .profileContainer img {
+    width: auto;
+    height: 3rem;
+}
+
+.sidebar .profileContainer .profileContents {
+    padding: 0 0 0 1rem;
+}
+
+.sidebar .profileContainer .profileContents .name {
+    padding: 0;
+    margin: 0;
+    font-size: 16.7px;
+    color: #545454;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.sidebar .profileContainer .profileContents p {
+    padding: 0;
+    margin: 0;
+    font-size: 13.9px;
+    color: #545454;
+    text-transform: lowercase;
+}
+
+.sidebar .contentsContainer {
+    margin: 2rem 0 0 0;
+}
+
+.sidebar .contentsContainer ul {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .contentsContainer ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin: 0.75rem 0;
+    padding: 0.75rem 0;
+    width: 100%;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.sidebar .contentsContainer ul li img {
+    padding: 0 1rem 0 0.5rem;
+}
+
+.sidebar .contentsContainer ul li a {
+    text-decoration: none;
+    color: #545454;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 0 0.5rem;
+}
+
+
+.sidebar .contentsContainer ul li.active a {
+    color: #CB3CFF;
+}
+
+.sidebar .contentsContainer ul li:hover {
+    background-color: #d3d3d3;
+    transition: 0.25s;
+}
+
+.sidebar.active {
+    width: 3rem;
+    transition: 0.5s all;
+}
+
+.sidebar.active .logoContainer .title {
+    display: none;
+}
+
+
+.sidebar.active .burgerContainer .burgerMenu {
+    background-color: black;
+    transition: 0.5s all;
+}
+
+.sidebar.active .burgerContainer .burgerMenu::before {
+    transform: translateY(0rem) rotate(0deg);
+    transition: 0.5s all;
+}
+
+.sidebar.active .burgerContainer .burgerMenu::after {
+    transform: translateY(0rem) rotate(0deg);
+    transition: 0.5s all;
+}
+
+.sidebar.active .profileContainer .profileContents {
+    opacity: 0;
+}
+
+.sidebar.active .contentsContainer a {
+    opacity: 0;
+}
